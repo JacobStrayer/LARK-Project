@@ -1,0 +1,19 @@
+#!/bin/bash
+# This is the main menu script
+printf "\n[Main Menu]\n\n"
+printf "[Riddle?]\n"
+printf "[Quit?]\n"
+read -p ">> " userInput
+printf "\n"
+case "$userInput" in
+    Riddles|riddles|RIDDLES|riddle|Riddle|RIDDLE )
+        source /home/jstrayer8477/riddles
+        ;;
+    Quit|quit|QUIT )
+        source /home/jstrayer8477/exitStatement
+        ;;
+    * )
+        printf ":/ This was not an option\n\n"
+        source /home/jstrayer8477/mainMenu
+        ;;
+esac
