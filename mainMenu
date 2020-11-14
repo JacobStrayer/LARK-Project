@@ -1,10 +1,9 @@
 #!/bin/bash
 # This is the main menu script
-printf "\n[Main Menu]\n\n"
-printf "[Riddle?]\n"
-printf "[Quit?]\n"
+echo -e "\n[Main Menu]\n\n"
+echo -e "[Riddle?]\n[Quit?]\n[About?]"
 read -p ">> " userInput
-printf "\n"
+echo -e "\n"
 case "$userInput" in
     Riddles|riddles|RIDDLES|riddle|Riddle|RIDDLE )
         source /home/jstrayer8477/riddles
@@ -12,8 +11,11 @@ case "$userInput" in
     Quit|quit|QUIT )
         source /home/jstrayer8477/exitStatement
         ;;
+    about|About|ABOUT )
+        source /home/jstrayer8477/aboutScreen
+        ;;
     * )
-        printf ":/ This was not an option\n\n"
+        echo -e ":/ This was not an option\n\n"
         source /home/jstrayer8477/mainMenu
         ;;
 esac

@@ -1,0 +1,35 @@
+#!/bin/bash
+# This is the screen that will contain the credits and about the game
+echo "----------------------"
+echo -ne ":O               (00%)\r"
+sleep 0.2
+echo -ne "#####            (33%)\r"
+sleep $(($RANDOM%2))
+echo -ne "###############  (100%)\n"
+echo -e  "----------------------\n"
+sleep $(($RANDOM%2))
+echo "= I was created for the LARK project of Fall 2020 for the Intro to Unix class. ="
+sleep $(($RANDOM%2))
+echo "= I was created by Jacob Strayer! ="
+sleep $(($RANDOM%2))
+echo -e "= Imagine being stinky! =\n= Couldn't be me :P =\n"
+sleep 3
+echo -e "[Go Back?]"
+read -p ">> " userInput
+echo -e "\n"
+case "$userInput" in
+    yes|Yes|YES )
+        echo "----------------------"
+        echo -ne ":O               (00%)\r"
+        sleep 0.2
+        echo -ne "#####            (34%)\r"
+        sleep $(($RANDOM%2))
+        echo -ne "###############  (100%)\n"
+        echo -e  "----------------------\n"
+        sleep $(($RANDOM%5))
+        source /home/jstrayer8477/mainMenu
+        ;;
+    * )
+        source /home/jstrayer8477/aboutScreen
+        ;;
+esac
