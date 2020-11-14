@@ -1,0 +1,17 @@
+#!/bin/bash
+# Yeah, idk why I made that exitStatement instead of closing or some
+printf "= Are you sure you want to leave? =\n[Yes]\n[No]\n"
+read -p ">> " userInput
+printf "\n"
+case "$userInput" in
+    yes|Yes|YES )
+        exit
+        ;;
+    no|No|NO )
+        source /home/jstrayer8477/mainMenu
+        ;;
+
+    * )
+        printf "\n= Uh oh :O =\n"
+        ;;
+esac
