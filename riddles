@@ -1,0 +1,21 @@
+#!/bin/bash
+RANDOM=$$
+echo "----------------------"
+echo -ne ":O               (00%)\r"
+sleep 0.2
+echo -ne "#####            (33%)\r"
+sleep $(($RANDOM%5))
+echo -ne "##########       (66%)\r"
+sleep $(($RANDOM%5))
+echo -ne "###############  (100%)\n"
+echo -e  "----------------------\n"
+sleep $(($RANDOM%2))
+echo -e "= This is the riddles placeholder :P =\n"
+sleep $(($RANDOM%3))
+echo "----------------------"
+echo -ne ":O               (00%)\r"
+sleep 0.2
+echo -ne "###############  (100%)\n"
+echo "----------------------"
+sleep $(($RANDOM%5))
+source /home/jstrayer8477/mainMenu
