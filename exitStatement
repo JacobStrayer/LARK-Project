@@ -5,9 +5,11 @@ read -p ">> " userInput
 echo -e "\n"
 case "$userInput" in
     yes|Yes|YES )
+        clear
         exit
         ;;
     no|No|NO )
+        clear
         source /home/jstrayer8477/mainMenu
         ;;
 

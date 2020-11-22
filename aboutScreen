@@ -1,35 +1,36 @@
 #!/bin/bash
-# This is the screen that will contain the credits and about the game
-echo "----------------------"
+# This is the about screen, will contain the credits and about the game
+echo -e "----------------------"
 echo -ne ":O               (00%)\r"
 sleep 0.2
 echo -ne "#####            (33%)\r"
 sleep $(($RANDOM%2))
 echo -ne "###############  (100%)\n"
-echo -e  "----------------------\n"
+echo -e "----------------------\n"
 sleep $(($RANDOM%2))
-echo "= I was created for the LARK project of Fall 2020 for the Intro to Unix class. ="
-sleep $(($RANDOM%2))
-echo "= I was created by Jacob Strayer! ="
-sleep $(($RANDOM%2))
-echo -e "= Imagine being stinky! =\n= Couldn't be me :P =\n"
-sleep 3
+echo "= I was created for the LARK Project of Fall 2020 for the Intro to Unix class :) ="
+sleep 1
+echo "= This page was created by Jacob Strayer! ="
+sleep 1
+echo -e "= Why are you still here? ="
+sleep 2
 echo -e "[Go Back?]"
-read -p ">> " userInput
-echo -e "\n"
-case "$userInput" in
+read -p ">> " aboutUserInput
+case "$aboutUserInput" in
     yes|Yes|YES )
-        echo "----------------------"
+        clear
+        echo -e "----------------------"
         echo -ne ":O               (00%)\r"
-        sleep 0.2
+        sleep 0.1
         echo -ne "#####            (34%)\r"
         sleep $(($RANDOM%2))
         echo -ne "###############  (100%)\n"
-        echo -e  "----------------------\n"
-        sleep $(($RANDOM%5))
-        source /home/jstrayer8477/mainMenu
+        echo -e "----------------------\n"
+        sleep $(($RANDOM%4))
+        source /home/jstrayer8477/LARK_Project/mainMenu
         ;;
     * )
-        source /home/jstrayer8477/aboutScreen
+        echo "Uh oh, you entered the wrong thing buddy :/"
+        source /home/jstrayer8477/LARK_Project/aboutScreen
         ;;
 esac

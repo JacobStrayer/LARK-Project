@@ -11,6 +11,32 @@ echo -ne "###############  (100%)\n"
 echo -e  "----------------------\n"
 sleep $(($RANDOM%2))
 echo -e "= This is the riddles placeholder :P =\n"
+riddleCounter=0
+if (( $riddleCounter <= 5 ))
+then
+    if (( $riddleCounter == 0 ))
+    then
+        echo -ne "riddle01 placeholder\n"
+        read -p ">> " response
+        echo -ne "\n"
+        if (( $response == "no" ))
+        then
+            echo -ne "Wow! You got it right!\n"
+        fi
+    elif (( $riddleCounter == 1 ))
+    then
+        echo -ne "riddle02 placeholder\n"
+        read -p ">> " response
+        echo -ne "\n"
+        if (( $response == "no" ))
+        then
+             echo -ne "u got it\n"
+        fi
+    else
+        echo -ne "Uh oh\n"
+    fi
+fi
+clear
 sleep $(($RANDOM%3))
 echo "----------------------"
 echo -ne ":O               (00%)\r"
@@ -18,4 +44,4 @@ sleep 0.2
 echo -ne "###############  (100%)\n"
 echo "----------------------"
 sleep $(($RANDOM%5))
-source /home/jstrayer8477/mainMenu
+source /home/jstrayer8477/LARK_Project/mainMenu
