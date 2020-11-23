@@ -19,7 +19,7 @@ echo -e "\n"
 case "$response" in
     yes|Yes|YES )
         echo -e "Perfect!\n"
-        echo -e "For your first riddle\nWhat is a household pet, meows, and reveeals the contents of a file?\m"
+        echo -e "For your first riddle\nWhat is a household pet, meows, and reveals the contents of a file?\m"
         echo -e "Remember! This language is case sensitive and all of the riddles asked result in commands that are all lower case!\nYou have been warned :)"
         read -p ">> " riddle01
         case "$riddle01" in
@@ -42,7 +42,7 @@ case "$response" in
                 echo -e "Wow! You got it right!\n"
                 ;;
             help|Help|HELP )
-                echo -e "Help was implemented for this one! Try 13! Go back to the start tho :)\n"
+                echo -e "Help was implemented for this one! Try 13! Go back to the start though :)\n"
                 source /home/jstrayer8477/LARK_Project/riddles
                 ;;
             * )
