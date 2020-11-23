@@ -1,5 +1,6 @@
 #!/bin/bash
 RANDOM=$$
+clear
 echo "----------------------"
 echo -ne ":O               (00%)\r"
 sleep 0.2
@@ -11,31 +12,68 @@ echo -ne "###############  (100%)\n"
 echo -e  "----------------------\n"
 sleep $(($RANDOM%2))
 echo -e "= This is the riddles placeholder :P =\n"
-riddleCounter=0
-if (( $riddleCounter <= 5 ))
-then
-    if (( $riddleCounter == 0 ))
-    then
-        echo -ne "riddle01 placeholder\n"
-        read -p ">> " response
-        echo -ne "\n"
-        if (( $response == "no" ))
-        then
-            echo -ne "Wow! You got it right!\n"
-        fi
-    elif (( $riddleCounter == 1 ))
-    then
-        echo -ne "riddle02 placeholder\n"
-        read -p ">> " response
-        echo -ne "\n"
-        if (( $response == "no" ))
-        then
-             echo -ne "u got it\n"
-        fi
-    else
-        echo -ne "Uh oh\n"
-    fi
-fi
+# riddleCounter=0 will be used to implement a way to skip riddles already done.
+echo -e "Would you like a riddle? :)\n"
+echo -e "[Yes]\n[No]
+read -p ">> " response
+case "$response" in
+    yes|Yes|YES )
+        echo -e "Perfect!\n"
+        echo -e "For your first riddle\nWhat is a household pet, meows, and reveals the contents of a file?\n"
+        echo -e "Remember! This language is case sensitive and the commands asked here are all in lowercase.\nYou have been warned. :)"
+        read -p ">> " riddle01
+        echo -e "\n"
+        case "$riddle01" in
+            cat|Cat|CAT )
+                echo -e "Yep! You got it right! That one was pretty easy right?\n"
+            help|Help|HELP )
+                echo -e "Sorry, this isn't implemented yet :P\n"
+            * )
+                echo -e "Uh oh spaghetti-os\nA mistake sends you back to start of the riddles\n"
+                source /home/jstrayer8477/LARK_Project/riddles
+        ;;
+        echo -e "For your second riddle\nWhat is the 13th letter? For the second half, what is the abbreviation of 'ok'?\n"
+        read -p ">> " riddle02
+        echo -e "\n"
+        case "$riddle02" in
+            mk )
+                echo -e "Wow! You got it right!\n"
+            help|Help|HELP )
+                echo -e "Sorry, this isn't implemented yet :P\n"
+            * )
+                echo -e "Ye shalt be cast once more unto the start\nA mistake sends you back to start of the riddlen"
+                source /home/jstrayer8477/LARK_Project/riddles
+        ;;
+        echo -e "Time for a harder riddle :)\nMany have heard me, none have seen me\nI do not speak unless spoken to\nWhat am I?\n"
+        read -p ">> " riddle03
+        echo -e "\n"
+        case "$riddle03" in
+            echo )
+                echo -e "It seems I will have to ask harder riddles >:(\n"
+            help|Help|HELP )
+                echo -e "Sorry, this isn't implemented yet :P\n"
+            * )
+                echo -e "Go directly to the start, do not pass GO and definitely do not collect $200\nA mistake sends you back to start of the riddles\n"
+                source /home/jstrayer8477/LARK_Project/riddles
+        ;;
+        echo -e "It seems I am out of riddles. :/\nI will endeavour to fix this oversight.\n"
+    no|No|NO )
+        echo -e "What are you doing here then?"
+        echo -e "----------------------"
+        echo -ne ":O               (00%)\r"
+        sleep 0.1
+        echo -ne "#####            (34%)\r"
+        sleep $(($RANDOM%2))
+        echo -ne "###############  (100%)\n"
+        echo -e "----------------------\n"
+        sleep $(($RANDOM%4))
+        source /home/jstrayer8477/LARK_Project/mainMenu
+        ;;
+    * )
+        echo "Uh oh, that wasn't one of the given responses. Try again please."
+        source /home/jstrayer8477/LARK_Project/riddles
+        ;;
+esac
 clear
 sleep $(($RANDOM%3))
 echo "----------------------"
