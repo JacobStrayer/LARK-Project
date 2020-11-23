@@ -26,11 +26,14 @@ case "$response" in
         case "$riddle01" in
             cat|Cat|CAT )
                 echo -e "Yep! You got it right! That one was pretty easy right?\n"
+                ;;
             help|Help|HELP )
                 echo -e "Sorry, this isn't implemented yet :P\n"
+                ;;
             * )
                 echo -e "Uh oh spaghetti-os\nA mistake sends you back to start of the riddles\n"
                 source /home/jstrayer8477/LARK_Project/riddles
+                ;;
         ;;
         echo -e "For your second riddle\nWhat is the 13th letter? For the second half, what is the abbreviation of 'ok'?\n"
         read -p ">> " riddle02
@@ -38,11 +41,14 @@ case "$response" in
         case "$riddle02" in
             mk )
                 echo -e "Wow! You got it right!\n"
+                ;;
             help|Help|HELP )
                 echo -e "Sorry, this isn't implemented yet :P\n"
+                ;;
             * )
                 echo -e "Ye shalt be cast once more unto the start\nA mistake sends you back to start of the riddlen"
                 source /home/jstrayer8477/LARK_Project/riddles
+                ;;
         ;;
         echo -e "Time for a harder riddle :)\nMany have heard me, none have seen me\nI do not speak unless spoken to\nWhat am I?\n"
         read -p ">> " riddle03
